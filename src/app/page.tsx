@@ -1,5 +1,5 @@
 // app/(main)/page.tsx
-import { FAQSection, FeaturesSection, HeroSection, PricingSection } from '@/components/molecules';
+import { FAQSection, FeaturesSection, HeroSection, PricingSection } from '@/components';
 import { featuresData, pricingPlans, faqData } from '@/lib/data'; // Importamos los datos
 
 // ¡Importante!: Por defecto, este es un Server Component (RSC), ideal para SEO.

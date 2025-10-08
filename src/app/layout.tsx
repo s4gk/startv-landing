@@ -1,18 +1,22 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import { Navbar } from '@/components/organisms/Navbar';
+import { Sora } from "next/font/google";
 
-// 1. Metadata para SEO (Título, Descripción, Open Graph)
+const sora = Sora({
+  subsets: ["latin"],
+  variable: "--font-sora",
+  display: "swap",
+});
+ 
 export const metadata: Metadata = {
-  // --- Metadata Estándar (General) ---
   title: 'Start TV | Velocidad en Internet y TV con Planes Flexibles',
   description: 'Contrata planes flexibles de internet de alta velocidad y TV online. Sin cláusulas de permanencia. ¡Empieza hoy mismo con la mejor experiencia de entretenimiento!',
   
-  // --- Canonical URL (Importante para evitar contenido duplicado) ---
   alternates: {
-    canonical: 'https://www.tudominio.com/', // ¡Cambia esto por tu dominio real!
+    canonical: 'https://www.tudominio.com/',
   },
 
-  // --- Open Graph (Para redes sociales como Facebook/WhatsApp) ---
   openGraph: {
     title: 'Start TV | Internet y TV Flexible',
     description: 'Planes flexibles de internet y TV. Sin permanencia.',
@@ -45,8 +49,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es">
+    <html lang="es" className={sora.variable}>
       <body>
+        <Navbar />
         {/* Aquí puedes incluir el Header.tsx y Footer.tsx si son comunes */}
         {children}
       </body>

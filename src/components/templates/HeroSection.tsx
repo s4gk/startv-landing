@@ -10,7 +10,7 @@ interface HeroProps {
 export function HeroSection({ title, subtitle, ctaText }: HeroProps) {
   return (
     // Usa una clase para el fondo que se ve en tu imagen
-    <section className="relative h-[600px] flex items-center justify-center text-white">
+    <section className="relative h-screen flex items-center justify-center text-white">
       
       {/* 1. Fondo de Imagen Optimizado (next/image) */}
       <Image
