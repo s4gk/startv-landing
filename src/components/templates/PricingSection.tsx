@@ -1,5 +1,5 @@
 // components/sections/PricingSection.tsx
-import { pricingPlans } from '@/lib/data'; // Importa los datos de planes
+import { pricingPlans } from '@/lib/FeaturesData'; // Importa los datos de planes
 // import { PlanCard } from '@/components/ui/PlanCard'; // Componente PlanCard
 
 interface PricingProps {

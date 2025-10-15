@@ -1,46 +1,44 @@
-// app/(main)/page.tsx
-import { FAQSection, FeaturesSection, HeroSection, PricingSection } from '@/components';
-import { featuresData, pricingPlans, faqData } from '@/lib/data'; // Importamos los datos
+import {
+  FAQSection,
+  FeaturesSection,
+  HeroSection,
+  PricingSection,
+} from "@/components";
+import { faqData, pricingPlans } from "@/lib";
 
-// ¡Importante!: Por defecto, este es un Server Component (RSC), ideal para SEO.
 
 export default function LandingPage() {
   return (
-    <main>
+    <main className="px-6 lg:px-16 bg-background pt-[4rem]">
       {/* 1. Banner Principal: El H1 es clave para el SEO */}
-      <HeroSection 
-        title="Velocidad en Internet y TV con el mejor contenido"
-        subtitle="Planes flexibles, sin permanencia y con la fibra óptica más rápida del país."
+      <HeroSection
+        title={
+          <>
+            Velocidad en <span className="text-green">Internet</span> y TV
+            con el <span className="text-green">mejor</span> contenido
+          </>
+        }
+        subtitle="Navega a máxima velocidad y accede a la mejor programación de TV en HD. Conéctate, trabaja, aprende y diviértete sin interrupciones."
         ctaText="Comenzar Ahora"
       />
-      
+
       {/* 2. ¿Por Qué Elegir Start TV? (Usamos datos estáticos) */}
-      <FeaturesSection 
-        data={featuresData}
-        title="¿Por Qué Elegir Start TV?" 
-      />
-      
-      {/* 3. ¿Cómo Funciona? (Simplemente renderizamos la sección) */}
-      {/* <HowItWorks /> */}
+      <FeaturesSection title="¿Por Qué Elegir Start TV?" subtitle="Más que internet rápido, ofrecemos una experiencia completa con servicios de primera clase y tecnología de vanguardia." />
 
       {/* 4. Planes Flexibles (Usamos datos estáticos) */}
-      <PricingSection 
-        plans={pricingPlans} 
+      <PricingSection
+        plans={pricingPlans}
         title="Planes flexibles para todos"
       />
-      
+
       {/* 5. ¿Quiénes Somos? */}
       {/* <AboutUs /> */}
 
       {/* 6. Preguntas Frecuentes: Clave para el Rich Snippet de Google */}
-      <FAQSection 
-        data={faqData} 
-        title="Preguntas Frecuentes"
-      />
+      <FAQSection data={faqData} title="Preguntas Frecuentes" />
 
       {/* 7. Testimonios / Reviews */}
       {/* <Testimonials /> */}
-      
     </main>
   );
 }

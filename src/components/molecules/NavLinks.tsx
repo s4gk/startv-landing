@@ -1,17 +1,17 @@
-import { navbarLinks } from '@/data'
-import Link from 'next/link'
-import React from 'react'
+import React from 'react';
+import { navbarLinks } from '@/data';
+import { ButtonNav } from '@/components';
 
-export const NavLinks = () => {
+interface NavLinksProps {
+    setIsOpen?: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export const NavLinks = ({setIsOpen}: NavLinksProps) => {
 
     return (
-        <ul className='flex text-black gap-10'>
+        <ul className='flex flex-col justify-center content-center lg:flex-row gap-8'>
             {navbarLinks.map(({id, name, href}) => (
-                <li key={id}>
-                    <Link href={href} className='text-base font-medium hover:font-semibold'>
-                        {name}
-                    </Link>
-                </li>
+                <ButtonNav key={id} link={href} label={name} onClick={() => setIsOpen && setIsOpen(false)} id={0}/>
             ))}
         </ul>
     )

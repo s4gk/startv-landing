@@ -1,5 +1,5 @@
 // components/sections/FAQSection.tsx
-import { faqData } from '@/lib/data'; // Importa los datos de las FAQs
+import { faqData } from '@/lib/FeaturesData'; // Importa los datos de las FAQs
 import Script from 'next/script'; // Importante para cargar el JSON-LD de forma asíncrona
 
 interface FAQProps {
