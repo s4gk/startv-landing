@@ -50,7 +50,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es" className={sora.variable}>
-      <body>
+      <body className='overscroll-x-none'>
         <Navbar />
         {/* Aquí puedes incluir el Header.tsx y Footer.tsx si son comunes */}
         {children}

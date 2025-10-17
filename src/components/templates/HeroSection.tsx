@@ -16,7 +16,7 @@ interface HeroProps {
 
 export function HeroSection({ title, subtitle, ctaText }: HeroProps) {
   return (
-    <section className="h-[calc(100vh-4rem)] lg:h-[calc(100vh-4.9rem)] pt-4 flex flex-col justify-between gap-4 lg:pt-2">
+    <section className="h-[calc(100vh-4rem)] lg:h-[calc(100vh-4.9rem)] pt-4 flex flex-col justify-between gap-4 lg:pt-2 overflow-hidden px-6 lg:px-16">
       <div className="h-[90%] relative text-foreground rounded-xl flex flex-col justify-center items-center">
         {/* 1. Fondo de Imagen Optimizado (next/image) */}
         <Image
@@ -50,7 +50,9 @@ export function HeroSection({ title, subtitle, ctaText }: HeroProps) {
           <ButtonCTA label={ctaText} delay={0.8} duration={0.8} />
         </div>
       </div>
-      <FeaturesBar />
+      <div className="relative left-1/2 -translate-x-1/2 w-screen overflow-hidden">
+        <FeaturesBar />
+      </div>
     </section>
   );
 }

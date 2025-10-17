@@ -9,7 +9,7 @@ export const Navbar = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <nav className="bg-background px-6 py-4 border-b lg:border-none flex w-full gap-2 lg:px-16 lg:py-6 z-50 fixed">
+    <nav className="bg-background px-6 py-4 border-b lg:border-none flex w-full gap-2 lg:px-16 lg:py-6 z-50 fixed w-full">
       {/* Logo + Menú Toggle */}
       <div className="w-full lg:w-2/7 flex justify-between items-center">
         <div>Logo</div>
