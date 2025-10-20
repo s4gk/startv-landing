@@ -13,19 +13,10 @@ export * from './atoms/icons/IconSignal';
 export * from './atoms/icons/IconSupport';
 export * from './atoms/icons/IconWhatsapp';
 export * from './atoms/icons/IconWorld';
-<<<<<<< HEAD
-export * from './atoms/icons/types';
-export * from './molecules/CardFeatures';
-export * from './molecules/NavLinks';
-export * from './molecules/SocialIcons';
-export * from './organisms/AnimateFeaturesBar';
-export * from './organisms/Navbar';
-=======
 export * from './molecules/CardFeatures/CardFeatures';
 export * from './molecules/NavLinks/NavLinks';
 export * from './molecules/SocialIcons/SocialIcons';
 export * from './organisms/Navbar/Navbar';
->>>>>>> 38ababf (feat: 20/10/25 StarTV Landing Page)
 export * from './templates/FAQSection';
 export * from './templates/Features/FeaturesSection';
 export * from './templates/Hero/HeroSection';
