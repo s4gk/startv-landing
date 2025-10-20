@@ -13,4 +13,11 @@ export const pricingPlans = [
     isPopular: true,
     cta: '¡El Más Vendido!',
   },
+  {
+    name: 'Plan Standar',
+    price: '100.000',
+    features: ['100 Mbps de Fibra', 'TV Esencial', '1 Dispositivo'],
+    isPopular: false,
+    cta: 'Lo Quiero',
+  }
 ];

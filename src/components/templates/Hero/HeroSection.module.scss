@@ -1,0 +1,81 @@
+@import "@/styles/_variables";
+
+.hero {
+  margin-top: $nav-height;
+  height: calc(100vh - #{$nav-height});
+  box-sizing: border-box;
+  padding-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+  overflow: hidden;
+  gap: 1.5rem;
+
+  &__background {
+    height: 90%;
+    color: $foreground;
+    border-radius: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 $section-margin-x;
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__image {
+    filter: brightness(0.25);
+    border-radius: 0.75rem;
+  }
+
+  &__content {
+    z-index: 10;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    height: 80%;
+
+    @media (min-width: 640px) {
+      gap: 3rem;
+      height: 98%;
+    }
+  }
+
+  &__title {
+    font-size: 1.875rem;
+    font-weight: 700;
+    line-height: 1.2;
+    width: 100%;
+    color: white;
+
+    @media (min-width: 640px) {
+      font-size: 2.25rem;
+      width: 80%;
+    }
+
+    @media (min-width: 768px) {
+      font-size: 3rem;
+    }
+  }
+
+  &__subtitle {
+    font-size: 0.75rem;
+    width: 90%;
+    opacity: 0.9;
+    color: white;
+
+    @media (min-width: 640px) {
+      font-size: 1.125rem;
+    }
+
+    @media (min-width: 768px) {
+      width: 70%;
+      font-size: 1.25rem;
+    }
+  }
+}

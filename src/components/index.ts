@@ -1,6 +1,7 @@
 export * from './atoms/Animation/AnimatedParagraph';
-export * from './atoms/Animation/Badge';
-export * from './atoms/Animation/ButtonCTA';
+export * from './atoms/Animation/Badge/Badge';
+export * from './atoms/Animation/ButtonCTA/ButtonCTA';
+export * from './atoms/Animation/FeaturesBar/FeaturesBar';
 export * from './atoms/ButtonNav';
 export * from './atoms/icons/IconCircle';
 export * from './atoms/icons/IconClose';
@@ -12,13 +13,20 @@ export * from './atoms/icons/IconSignal';
 export * from './atoms/icons/IconSupport';
 export * from './atoms/icons/IconWhatsapp';
 export * from './atoms/icons/IconWorld';
+<<<<<<< HEAD
 export * from './atoms/icons/types';
 export * from './molecules/CardFeatures';
 export * from './molecules/NavLinks';
 export * from './molecules/SocialIcons';
 export * from './organisms/AnimateFeaturesBar';
 export * from './organisms/Navbar';
+=======
+export * from './molecules/CardFeatures/CardFeatures';
+export * from './molecules/NavLinks/NavLinks';
+export * from './molecules/SocialIcons/SocialIcons';
+export * from './organisms/Navbar/Navbar';
+>>>>>>> 38ababf (feat: 20/10/25 StarTV Landing Page)
 export * from './templates/FAQSection';
-export * from './templates/FeaturesSection';
-export * from './templates/HeroSection';
-export * from './templates/PricingSection';
+export * from './templates/Features/FeaturesSection';
+export * from './templates/Hero/HeroSection';
+export * from './templates/Pricing/PricingSection';

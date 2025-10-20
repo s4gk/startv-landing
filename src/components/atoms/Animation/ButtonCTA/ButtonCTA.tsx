@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import React, { ReactNode } from "react";
+import styles from "./ButtonCTA.module.scss";
 
 type ButtonCTAProps = {
   label: ReactNode;
@@ -16,16 +17,14 @@ export const ButtonCTA = ({ label, delay, duration, onClick }: ButtonCTAProps) =
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay, duration, ease: 'easeOut' }}
-      className="relative px-10 py-2 rounded-full text-white font-semibold overflow-hidden shadow-lg border border-white text-sm sm:text-base lg:text-xl lg:px-14 lg:py-3"
+      className={styles.button}
     >
-      {/* Fondo con gradiente */}
-      <span className="absolute inset-0 bg-gradient-to-r from-green to-blue rounded-xl" />
 
       {/* Capa oscura encima del gradiente */}
-      <span className="absolute inset-0 bg-black/50 rounded-xl" />
+      <span className={styles.button__shadow} />
 
       {/* Texto visible */}
-      <span className="relative z-10">{label}</span>
+      <span className={styles.button__text}>{label}</span>
     </motion.button>
   );
 };

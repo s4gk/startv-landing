@@ -9,7 +9,7 @@ import { faqData, pricingPlans } from "@/lib";
 
 export default function LandingPage() {
   return (
-    <main className="px-6 lg:px-16 bg-background pt-[4rem]">
+    <main>
       {/* 1. Banner Principal: El H1 es clave para el SEO */}
       <div className="-mx-6 lg:-mx-16">
         <HeroSection

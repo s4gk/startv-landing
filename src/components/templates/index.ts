@@ -1,4 +1,4 @@
 export * from './FAQSection';
-export * from './FeaturesSection';
-export * from './HeroSection';
-export * from './PricingSection';
+export * from './Features/FeaturesSection';
+export * from './Hero/HeroSection';
+export * from './Pricing/PricingSection';

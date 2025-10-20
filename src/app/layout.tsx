@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
-import './globals.css';
-import { Navbar } from '@/components/organisms/Navbar';
+import "./globals.scss";
+import { Navbar } from '@/components/organisms/Navbar/Navbar';
 import { Sora } from "next/font/google";
 
 const sora = Sora({
