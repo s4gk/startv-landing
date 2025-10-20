@@ -1,5 +1,5 @@
+import "@/styles/globals.scss";
 import type { Metadata } from 'next';
-import "./globals.scss";
 import { Navbar } from '@/components/organisms/Navbar/Navbar';
 import { Sora } from "next/font/google";
 
@@ -50,7 +50,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es" className={sora.variable}>
-      <body className='overscroll-x-none'>
+      <body>
         <Navbar />
         {/* Aquí puedes incluir el Header.tsx y Footer.tsx si son comunes */}
         {children}

@@ -33,18 +33,18 @@ const featuresData: IFeaturesData[] = [
 
 export function FeaturesSection({ title, subtitle }: FeaturesSectionProps) {
   return (
-    <section className={styles.section}>
-      <div className={styles.container}>
-        <h2 className={styles.title}>{title}</h2>
+    <section className={styles["section"]}>
+      <div className={styles["section__container"]}>
+        <h2 className={styles["section__container-title"]}>{title}</h2>
 
         <AnimatedParagraph
           label={subtitle}
           delay={0.5}
           duration={0.5}
-          className={styles.subtitle}
+          className={styles["section__container-subtitle"]}
         />
 
-        <ul className={styles.featuresList}>
+        <ul className={styles["section__container-featuresList"]}>
           {featuresData.map(({ icon, title, description }, index) => (
             <FeatureCard
               key={index}

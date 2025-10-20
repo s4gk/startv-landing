@@ -1,25 +1,24 @@
 .features {
   position: relative;
-  width: 100vw;
-  transform: translateX(-50%);
+  width: 100%;
   background-color: #000;
   padding: 1rem 0;
 
   &__wrapper {
     display: flex;
-  justify-content: center;
-  white-space: nowrap;
-  width: 100vw;
+    justify-content: center;
+    white-space: nowrap;
+    width: 100%;
   }
 
   &__scroller {
+    @include font-size("xs");
     display: flex;
     gap: 2rem;
     text-transform: uppercase;
-    font-size: 0.875rem;
     font-weight: 600;
     letter-spacing: 0.05em;
-    color: #fff;
+    color: $white;
   }
 
   &__item {

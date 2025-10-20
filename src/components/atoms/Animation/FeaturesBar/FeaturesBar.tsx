@@ -8,7 +8,7 @@ import styles from "./FeaturesBar.module.scss";
 
 export const FeaturesBar = () => {
   return (
-    <motion.section
+    <motion.div
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
@@ -16,6 +16,7 @@ export const FeaturesBar = () => {
     >
       <div className={styles.features__wrapper}>
         <motion.div
+          className={styles.features__scroller}
           animate={{ x: ["0%", "-50%"] }}
           transition={{
             ease: "linear",
@@ -23,14 +24,6 @@ export const FeaturesBar = () => {
             repeat: Infinity,
           }}
         >
-          {/* Contenido 1 */}
-          {features.map((item, index) => (
-            <React.Fragment key={`${index}-1`}>
-              <span className="flex items-center">{item.label}</span>
-              <IconCircle />
-            </React.Fragment>
-          ))}
-
           {/* Contenido 2 (duplicado) */}
           {features.map((item, index) => (
             <React.Fragment key={`${index}-1`}>
@@ -46,7 +39,7 @@ export const FeaturesBar = () => {
           ))}
         </motion.div>
       </div>
-    </motion.section>
+    </motion.div>
 
   );
 };

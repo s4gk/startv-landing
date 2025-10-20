@@ -1,4 +1,4 @@
-export * from './atoms/Animation/AnimatedParagraph';
+export { AnimatedParagraph } from './atoms/Animation/AnimatedParagraph';
 export * from './atoms/Animation/Badge/Badge';
 export * from './atoms/Animation/ButtonCTA/ButtonCTA';
 export * from './atoms/Animation/FeaturesBar/FeaturesBar';
