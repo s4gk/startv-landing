@@ -23,12 +23,17 @@
     align-items: center;
     gap: 2rem;
 
+    @media (min-width: $md) {
+      @include font-size("md");
+      gap: 3rem;
+    }
+
     &-title {
       @include font-size("xl");
       font-weight: 700;
 
-      @media (min-width: 768px) {
-        font-size: 2.25rem;
+      @media (min-width: $md) {
+        @include font-size("2xl");
       }
     }
 
@@ -87,7 +92,6 @@
       }
 
       &-popular {
-        transform: scale(1.05);
         background: #000;
         color: #fff;
       }
@@ -175,7 +179,7 @@
     transition: all 0.3s ease;
 
     &:hover {
-      
+
       transform: scale(1.02);
     }
 

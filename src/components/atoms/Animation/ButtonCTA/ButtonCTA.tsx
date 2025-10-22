@@ -17,14 +17,14 @@ export const ButtonCTA = ({ label, delay, duration, onClick }: ButtonCTAProps) =
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay, duration, ease: 'easeOut' }}
-      className={styles.button}
+      className={styles["button"]}
     >
 
       {/* Capa oscura encima del gradiente */}
-      <span className={styles.button__shadow} />
+      <span className={styles["button__shadow"]} />
 
       {/* Texto visible */}
-      <span className={styles.button__text}>{label}</span>
+      <span className={styles["button__text"]}>{label}</span>
     </motion.button>
   );
 };

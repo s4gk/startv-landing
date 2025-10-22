@@ -9,16 +9,18 @@ interface BadgeProps {
   icon?: React.JSX.Element;
 }
 
-export const Badge = ({label, icon}: BadgeProps) => {
+export const Badge = ({ label, icon }: BadgeProps) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: -8 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3, ease: "easeOut" }}
-      className={styles.badge}
+      className={styles["badge"]}
     >
       {icon}
-      {label}
+      <span className={styles["badge__text"]}>
+        {label}
+      </span>
     </motion.div>
   );
 };

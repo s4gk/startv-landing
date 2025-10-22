@@ -2,11 +2,12 @@
 
 .section {
   min-height: 100vh;
-  padding: 2rem 0;
+  padding: 4rem 0;
   display: flex;
 
   @media (min-width: $md) {
     margin: 0 $section-margin-md;
+    padding: 6rem 0;
     min-height: auto;
   }
 
@@ -23,7 +24,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 1.5rem;
+    gap: 2rem;
 
     @media (min-width: $lg) {
       gap: 3rem;

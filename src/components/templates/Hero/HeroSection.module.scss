@@ -50,9 +50,13 @@
     gap: 2rem;
     height: 80%;
 
-    @media (min-width: 640px) {
-      gap: 3rem;
+    @media (min-width: $sm) {
+      gap: 3.5rem;
       height: 98%;
+    }
+
+    @media (min-width: $md) {
+      gap: 4.5rem;
     }
   }
 
