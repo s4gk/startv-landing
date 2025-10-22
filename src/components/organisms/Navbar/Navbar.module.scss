@@ -14,9 +14,14 @@
   gap: 0.5rem;
   align-items: center;
 
+  @media (min-width: $md) {
+    border-bottom: none;
+    padding: 1.5rem $section-margin-md;
+  }
+
   @media (min-width: $lg) {
     border-bottom: none;
-    padding: 1.5rem 4rem;
+    padding: 1.5rem $section-margin-lg;
   }
 
   &__start {

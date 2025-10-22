@@ -3,6 +3,7 @@ export * from './atoms/Animation/Badge/Badge';
 export * from './atoms/Animation/ButtonCTA/ButtonCTA';
 export * from './atoms/Animation/FeaturesBar/FeaturesBar';
 export * from './atoms/ButtonNav';
+export * from './atoms/icons/IconCheck';
 export * from './atoms/icons/IconCircle';
 export * from './atoms/icons/IconClose';
 export * from './atoms/icons/IconEmail';

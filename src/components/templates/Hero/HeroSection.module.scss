@@ -25,6 +25,14 @@
     margin: 0 $section-margin-x;
     position: relative;
     overflow: hidden;
+
+    @media (min-width: $md) {
+      margin: 0 $section-margin-md;
+    }
+
+    @media (min-width: $lg) {
+      margin: 0 $section-margin-lg;
+    }
   }
 
   &__image {

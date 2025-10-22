@@ -1,24 +1,31 @@
+@import "@/styles/variables";
+
 .section {
   min-height: 100vh;
-  width: 100vw;
   padding: 2rem 0;
+  display: flex;
 
-  @media (min-width: 1024px) {
-    padding: 4.5rem 0;
+  @media (min-width: $md) {
+    margin: 0 $section-margin-md;
+    min-height: auto;
+  }
+
+
+  @media (min-width: $lg) {
+    margin: 0 $section-margin-lg;
+    min-height: auto;
   }
 
   &__container {
     width: 100%;
     margin: 0 auto;
-    padding: 0 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
     text-align: center;
     gap: 1.5rem;
 
-    @media (min-width: 1024px) {
+    @media (min-width: $lg) {
       gap: 3rem;
     }
 
@@ -37,11 +44,11 @@
       opacity: 0.9;
       @include font-size("sm");
 
-      @media (min-width: 640px) {
+      @media (min-width: $sm) {
         font-size: 1.125rem;
       }
 
-      @media (min-width: 768px) {
+      @media (min-width: $md) {
         width: 70%;
         font-size: 1.25rem;
       }
@@ -50,17 +57,21 @@
     &-featuresList {
       display: flex;
       flex-direction: column;
+      align-items: center;
       gap: 1.5rem;
       list-style: none;
       padding: 0;
       margin: 0;
 
-      @media (min-width: 768px) {
+      @media (min-width: $md) {
+        width: 100%;
         flex-direction: row;
+        justify-content: space-between;
+        gap: 1rem;
       }
 
-      @media (min-width: 1024px) {
-        gap: 4rem;
+      @media (min-width: $lg) {
+        gap: 2rem;
       }
     }
   }

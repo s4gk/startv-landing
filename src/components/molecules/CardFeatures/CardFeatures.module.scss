@@ -1,6 +1,6 @@
 .card {
   position: relative;
-  width: 260px;
+  width: 90%;
   min-height: 13.75rem;
   border-radius: 1rem;
   background: linear-gradient(to top, $green, $blue);
@@ -8,17 +8,21 @@
   background-blend-mode: lighten;
   padding: 1.5rem;
   text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(0, 0, 0, 0.5);
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
 
   &:hover {
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
   }
 
-  @media (min-width: 1024px) {
-    width: 420px;
-    padding: 3rem;
+  @media (min-width: $md) {
+    padding: 1rem 0.5rem;
+    width: 80%;
+  }
+
+
+  @media (min-width: $lg) {
+    padding: 3rem 4rem;
+    width: 50%;
   }
 
   &__wrapper {
