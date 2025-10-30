@@ -69,6 +69,7 @@ export const Faqs = () => {
               )}
             </AnimatePresence>
           </motion.div>
+          
         );
       })}
     </div>

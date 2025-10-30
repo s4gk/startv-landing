@@ -77,17 +77,27 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 70%;
+    gap: 2rem;
+    width: 90%;
+
+    @media (min-width: $md) {
+      width: 70%;
+    }
   }
 
   &__subcontainer {
-    width: 60%;
+    width: 40%;
+
+    @media (min-width: $md) {
+      width: 60%;
+    }
 
     &-subtitle {
       @include font-size("md");
       font-weight: 700;
       margin-bottom: 1rem;
     }
+
     &-description {
       @include font-size("sm");
       font-weight: 400;

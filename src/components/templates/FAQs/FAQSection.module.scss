@@ -2,7 +2,6 @@
 
 .faq {
   margin: 0 $section-margin-x;
-  padding: 2rem 0rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -15,6 +14,7 @@
 
     @media (min-width: $lg) {
       margin: 0 $section-margin-lg;
+      gap: 4rem;
     }
 
   &__title {

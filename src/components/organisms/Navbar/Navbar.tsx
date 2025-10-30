@@ -39,7 +39,7 @@ export const Navbar = () => {
     e.preventDefault();
     const target = document.querySelector(href);
     if (target) target.scrollIntoView({ behavior: "smooth" });
-    setIsOpen(false);
+    setIsOpen(!isOpen);
   };
 
   return (
@@ -86,6 +86,34 @@ export const Navbar = () => {
         />
         <SocialIcons />
       </div>
+       {/* 🔥 Menú móvil (solo visible cuando isOpen es true) */}
+      <AnimatePresence>
+        {isOpen && (
+          <>
+            <motion.div
+              className={styles["navbar__backdrop"]}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.5 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsOpen(false)}
+            />
+            <motion.aside
+              className={styles["navbar__aside"]}
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "tween", duration: 0.3 }}
+            >
+              <NavLinks
+                activeSection={activeSection}
+                onLinkClick={handleScrollTo}
+                setIsOpen={setIsOpen}
+              />
+              <SocialIcons />
+            </motion.aside>
+          </>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };

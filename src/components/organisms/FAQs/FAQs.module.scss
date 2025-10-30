@@ -39,6 +39,10 @@
     cursor: pointer;
     transition: color 0.2s, background 0.3s ease;
 
+    span {
+      @include font-size("md");
+    }
+
     &:hover {
       color: $green;
     }
@@ -51,6 +55,7 @@
   &__icon {
     transition: transform 0.3s;
     flex-shrink: 0;
+    width: 2rem;
   }
 
   &__answer {

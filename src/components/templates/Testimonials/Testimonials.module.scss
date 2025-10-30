@@ -1,7 +1,6 @@
 @import "@/styles/variables";
 
 .testimonials {
-  padding: 4rem 0;
   overflow: hidden;
   margin: 0 $section-margin-x;
   text-align: center;
@@ -22,6 +21,7 @@
 
   @media (min-width: $lg) {
     margin: 0 $section-margin-lg;
+    gap: 4rem;
   }
 
   &__title {

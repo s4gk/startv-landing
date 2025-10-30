@@ -74,6 +74,7 @@
 
     @media (min-width: $lg) {
       @include font-size("3xl");
+      min-width: 980px;
       width: 60%;
     }
   }

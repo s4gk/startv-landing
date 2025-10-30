@@ -14,10 +14,14 @@ type ButtonCTAProps = {
 export const ButtonCTA = ({ label, delay, duration, onClick }: ButtonCTAProps) => {
   return (
     <motion.button
+      type="button"
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ delay, duration, ease: 'easeOut' }}
+      whileHover={{ y: -5, scale: 1.03, transition: { duration: 0.2, ease: "easeOut" }, }}
+      whileTap={{ scale: 0.97 }}
+      transition={{ delay, duration, ease: "easeOut" }}
       className={styles["button"]}
+      onClick={onClick}
     >
 
       {/* Capa oscura encima del gradiente */}

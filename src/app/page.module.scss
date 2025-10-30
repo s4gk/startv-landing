@@ -1,0 +1,15 @@
+@import "@/styles/variables";
+
+.landing {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
+    @media (min-width: $md) {
+        gap: 8rem;
+    }
+
+    @media (min-width: $lg) {
+        gap: 10rem;
+    }
+}
