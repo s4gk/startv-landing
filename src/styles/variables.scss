@@ -1,7 +1,8 @@
 $background: #e8e8e8;
 $foreground: #303030;
-$white: #e9e9e9;
+$white: #f8f8f8;
 $green: #35ad4b;
+$green-dark: #0D681C;
 $blue: #22a697;
 $green-soft: #36b14e;
 $blue-soft: #20aa90;
@@ -15,7 +16,7 @@ $nav-gap: 0.5rem;
 // margin
 $section-margin-x: 1.5rem;
 $section-margin-md: 3rem;
-$section-margin-lg: 4rem;
+$section-margin-lg: 6rem;
 
 // Breakpoints
 $sm: 640px;
@@ -31,7 +32,7 @@ $font-family-base: "Sora", sans-serif;
 
 // Font Size
 $font-sizes: (
-  "xs": (mobile: 0.75rem, tablet: 0.875rem, desktop: 1rem),   // 12-16px
+  "xs": (mobile: 0.5rem, tablet: 0.75rem, desktop: 1.5rem),   // 12-16px
   "sm": (mobile: 0.875rem, tablet: 1rem, desktop: 1.125rem),   // 14-18px
   "md": (mobile: 1rem, tablet: 1.125rem, desktop: 1.25rem),    // 16-20px
   "lg": (mobile: 1.25rem, tablet: 1.5rem, desktop: 1.75rem),   // 20-28px

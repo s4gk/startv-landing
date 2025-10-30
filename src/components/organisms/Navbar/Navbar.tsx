@@ -1,40 +1,75 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IconMenu, IconClose, SocialIcons, NavLinks } from "@/components";
 import styles from "./Navbar.module.scss";
+import Image from "next/image";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const toggleMenu = () => setIsOpen(!isOpen);
+  const [activeSection, setActiveSection] = useState<string>("home");
+
+  useEffect(() => {
+    const sections = document.querySelectorAll("section[id]");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      {
+        threshold: 0.4,
+      }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => {
+      sections.forEach((section) => observer.unobserve(section));
+    };
+  }, []);
+
+  const handleScrollTo = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    e.preventDefault();
+    const target = document.querySelector(href);
+    if (target) target.scrollIntoView({ behavior: "smooth" });
+    setIsOpen(false);
+  };
 
   return (
-    <nav className={styles.navbar}>
-      {/* Logo + Toggle */}
-      <div className={styles.navbar__start}>
-        <div className={styles.navbar__logo}>Logo</div>
-        <button onClick={toggleMenu} className={styles.navbar__toggle}>
+    <nav className={styles["navbar"]}>
+      <div className={styles["navbar__start"]}>
+        <div className={styles["navbar__logo"]}>
+          <Image src="/images/logo.png" alt="Logo Star TV" width={50} height={50}/>
+        </div>
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className={styles["navbar__toggle"]}
+        >
           <AnimatePresence mode="wait" initial={false}>
             {isOpen ? (
               <motion.div
                 key="close"
-                initial={{ opacity: 0, scale: 0.8, rotate: -90 }}
-                animate={{ opacity: 1, scale: 1, rotate: 0 }}
-                exit={{ opacity: 0, scale: 0.8, rotate: 90 }}
-                transition={{ duration: 0.25, ease: "easeInOut" }}
-                className={`${styles}.navbar__toggle-icon`}
+                className={styles["navbar__toggle-icon"]}
+                initial={{ opacity: 0, rotate: -90 }}
+                animate={{ opacity: 1, rotate: 0 }}
+                exit={{ opacity: 0, rotate: 90 }}
               >
                 <IconClose />
               </motion.div>
             ) : (
               <motion.div
                 key="menu"
-                initial={{ opacity: 0, scale: 0.8, rotate: 90 }}
-                animate={{ opacity: 1, scale: 1, rotate: 0 }}
-                exit={{ opacity: 0, scale: 0.8, rotate: -90 }}
-                transition={{ duration: 0.25, ease: "easeInOut" }}
-                className={`${styles}.navbar__toggle-icon`}
+                className={styles["navbar__toggle-icon"]}
+                initial={{ opacity: 0, rotate: 90 }}
+                animate={{ opacity: 1, rotate: 0 }}
+                exit={{ opacity: 0, rotate: -90 }}
               >
                 <IconMenu />
               </motion.div>
@@ -43,41 +78,14 @@ export const Navbar = () => {
         </button>
       </div>
 
-      {/* Desktop menu */}
-      <div className={styles.navbar__end}>
-        <NavLinks />
+      <div className={styles["navbar__end"]}>
+        <NavLinks
+          activeSection={activeSection}
+          onLinkClick={handleScrollTo}
+          setIsOpen={setIsOpen}
+        />
         <SocialIcons />
       </div>
-
-      {/* Mobile menu */}
-      <AnimatePresence>
-        {isOpen && (
-          <>
-            <motion.div
-              className={styles.navbar__backdrop}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.45, ease: "easeInOut" }}
-              onClick={() => setIsOpen(false)}
-            />
-
-            <motion.aside
-              className={styles.navbar__aside}
-              initial={{ x: "100%", opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              exit={{ x: "100%", opacity: 0 }}
-              transition={{
-                duration: 0.6,
-                ease: "easeInOut",
-              }}
-            >
-              <NavLinks setIsOpen={setIsOpen} />
-              <SocialIcons />
-            </motion.aside>
-          </>
-        )}
-      </AnimatePresence>
     </nav>
   );
 };

@@ -1,0 +1,96 @@
+@import "@/styles/variables";
+
+.timeline {
+  &__line {
+    grid-column: 2;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1.5rem;
+    background-color: #d1d1d1;
+    border-radius: 1rem;
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: auto;
+  }
+
+  &__dot {
+    width: 1rem;
+    height: 1rem;
+    background-color: $green;
+    border-radius: 50%;
+    z-index: 2;
+  }
+
+  &__container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  &__item--left,
+  &__item--right {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  &__item--left {
+    justify-content: flex-start;
+    text-align: right;
+  }
+
+  &__item--right {
+    justify-content: flex-end;
+    text-align: left;
+  }
+
+  &__icon {
+    width: 5rem;
+    height: 5rem;
+    background-color: rgba(11, 216, 166, 0.15);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    fill: $green-dark;
+
+    svg {
+      width: 2.5rem;
+    }
+  }
+
+  &__content {
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+  }
+
+  &__subcontainer {
+    width: 60%;
+
+    &-subtitle {
+      @include font-size("md");
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    &-description {
+      @include font-size("sm");
+      font-weight: 400;
+    }
+  }
+}

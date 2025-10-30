@@ -1,0 +1,81 @@
+@import "@/styles/variables";
+
+.card {
+  background: #111;
+  color: #fff;
+  border-radius: 1rem;
+  padding: 2rem;
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+  }
+
+  &__quote {
+    color: #fff;
+    margin-bottom: 1rem;
+
+    svg {
+      width: 3rem;
+
+      @media (min-width: $md) {
+        width: 4rem;
+      }
+
+      @media (min-width: $lg) {
+        width: 5rem;
+      }
+    }
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+
+    &-avatar {
+      border-radius: 50%;
+      object-fit: cover;
+      width: 4rem;
+      height: 4rem;
+    }
+
+    &-name {
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    &-role {
+      font-size: 0.85rem;
+      color: #aaa;
+    }
+  }
+
+  &__text {
+    @include font-size("sm");
+    text-align: start;
+  }
+
+  &__divider {
+    border: none;
+    height: 1px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 1rem 0;
+  }
+
+  &__stars {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 1.2rem;
+    color: #ffdd00;
+  }
+}

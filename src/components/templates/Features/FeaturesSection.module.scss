@@ -2,15 +2,14 @@
 
 .section {
   min-height: 100vh;
-  padding: 4rem 0;
+  padding: 4rem 0 0 0;
   display: flex;
 
   @media (min-width: $md) {
     margin: 0 $section-margin-md;
-    padding: 6rem 0;
+    padding: 6rem 0 0 0;
     min-height: auto;
   }
-
 
   @media (min-width: $lg) {
     margin: 0 $section-margin-lg;
@@ -31,26 +30,26 @@
     }
 
     &-title {
-      @include font-size("lg");
+      @include font-size("xl");
       font-weight: 700;
 
-      @media (min-width: 768px) {
-        font-size: 2.25rem;
+      @media (min-width: $md) {
+        @include font-size("2xl");
       }
     }
-
 
     &-subtitle {
       width: 90%;
       opacity: 0.9;
       @include font-size("sm");
 
-      @media (min-width: $sm) {
-        font-size: 1.125rem;
+      @media (min-width: $md) {
+        width: 80%;
+        @include font-size("md");
       }
 
-      @media (min-width: $md) {
-        width: 70%;
+      @media (min-width: $lg) {
+        width: 50%;
         font-size: 1.25rem;
       }
     }
@@ -72,6 +71,8 @@
       }
 
       @media (min-width: $lg) {
+        gap: 2rem;
+        justify-content: space-between;
         gap: 2rem;
       }
     }

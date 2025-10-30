@@ -1,9 +1,9 @@
 @import "@/styles/variables";
 
 .badge {
-  padding: 0.25rem 0.5rem;
+  padding: 0.25rem 0.75rem;
   @include font-size("xs");
-  font-weight: 500;
+  font-weight: 400;
   background-color: rgba(255, 255, 255, 0.1);
   color: #ffffff;
   border: 1px solid #ffffff;
@@ -12,17 +12,26 @@
   justify-content: center;
   align-items: center;
   gap: 0.75rem;
-  width: 60%;
+  width: 46%;
 
   @media (min-width: $md) {
-    @include font-size("md");
-    width: 44%;
-    padding: 0.75rem;
+    @include font-size("sm");
+    width: 38%;
+    padding: 0.3rem;
   }
 
   @media (min-width: $lg) {
-    width: 25%;
-    padding: 0.5rem;
+    gap: 0rem;
+    width: 18%;
+    padding: 0.3rem;
+  }
+
+  svg {
+    width: 0.8rem;
+
+    @media (min-width: $md) {
+      width: 1.5rem;
+    }
   }
 
   &__text {

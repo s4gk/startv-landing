@@ -7,12 +7,12 @@
   z-index: 50;
   width: 100%;
   height: $nav-height;
-  background-color: $white;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   padding: 1rem $section-margin-x;
   display: flex;
   gap: 0.5rem;
   align-items: center;
+  background-color: $white;
 
   @media (min-width: $md) {
     border-bottom: none;
@@ -22,7 +22,7 @@
   @media (min-width: $lg) {
     border-bottom: none;
     padding: 1.5rem $section-margin-lg;
-     }
+  }
 
   &__start {
     display: flex;
@@ -62,6 +62,18 @@
       display: flex;
       justify-content: center;
       align-items: center;
+
+      svg {
+        width: 1.5rem;
+
+        &__badge {
+          width: 0.8rem;
+
+          @media (min-width: $md) {
+            width: 1.5rem;
+          }
+        }
+      }
     }
   }
 

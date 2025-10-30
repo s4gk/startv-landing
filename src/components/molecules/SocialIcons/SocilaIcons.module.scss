@@ -1,8 +1,12 @@
 .social {
-   display: flex;
+  display: flex;
   justify-content: space-between;
 
   @media (min-width: 1024px) {
     gap: 1rem;
+  }
+
+  svg {
+    width: 1.5rem;
   }
 }

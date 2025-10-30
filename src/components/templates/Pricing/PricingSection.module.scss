@@ -3,14 +3,19 @@
 .pricing {
   color: $foreground;
   margin: 0 $section-margin-x;
+  padding-top: 4rem;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   @media (min-width: $md) {
-    margin: 1.5rem $section-margin-md;
+    margin:0 $section-margin-md;
   }
 
   @media (min-width: $lg) {
-    margin: 1.5rem $section-margin-lg;
+    margin:0 $section-margin-lg;
   }
 
   &__container {
@@ -42,157 +47,37 @@
       width: 100%;
       opacity: 0.9;
 
-      @media (min-width: 640px) {
-        font-size: 1.125rem;
+      @media (min-width: $md) {
+        width: 70%;
+        @include font-size("md");
       }
 
-      @media (min-width: 768px) {
-        width: 70%;
-        font-size: 1.25rem;
+      @media (min-width: $lg) {
+        width: 52%;
+        @include font-size("md");
       }
     }
   }
 
-  /* === GRID === */
-  &__grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 3rem;
-    justify-items: center;
+  /* === CARDS === */
+  &__cards {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     text-align: left;
+    gap: 3rem;
+    align-items: center;
+
 
     @media (min-width: $md) {
-      grid-template-columns: repeat(3, 1fr);
       gap: 1rem;
+      flex-direction: row;
     }
 
     @media (min-width: $lg) {
-      grid-template-columns: repeat(3, 1fr);
       gap: 4rem;
-    }
-
-    /* === CARD === */
-    &-card {
-      position: relative;
-      background: #fff;
-      color: #000;
-      border-radius: 1.5rem;
-      padding: 2rem;
-      width: 100%;
-      max-width: 360px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-      transition: all 0.4s ease;
-      gap: 1rem;
-      display: flex;
-      flex-direction: column;
-
-      &:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-      }
-
-      &-popular {
-        background: #000;
-        color: #fff;
-      }
-    }
-
-    &-badge {
-      position: absolute;
-      top: -12px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #000;
-      color: #fff;
-      border: 1px solid #fff;
-      font-size: 0.75rem;
-      font-weight: 700;
-      padding: 0.25rem 1rem;
-      border-radius: 9999px;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
-    }
-  }
-
-  &__description {
-    padding-bottom: 1rem;
-    border-bottom: 1px solid #000;
-
-    &-popular {
-      padding-bottom: 1rem;
-      border-bottom: 1px solid #fff;
-    }
-
-    &-name {
-      @include font-size("xl");
-      font-weight: 400;
-      margin-top: 1rem;
-      margin-bottom: 0.75rem;
-    }
-
-    &-price {
-      font-size: 2rem;
-      font-weight: 600;
-
-      &-unit {
-        display: block;
-        font-size: 1rem;
-        font-weight: 400;
-        opacity: 0.8;
-        margin-top: 0.25rem;
-      }
-    }
-  }
-
-  /* === FEATURES === */
-  &__features {
-    text-align: left;
-    margin-bottom: 1rem;
-    list-style: none;
-    padding: 0;
-  }
-
-  &__feature {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.75rem;
-    margin-bottom: 0.75rem;
-    line-height: 1.5;
-  }
-
-  &__icon {
-    font-size: 1rem;
-    color: #22c55e;
-  }
-
-  /* === CTA BUTTON === */
-  &__cta {
-    width: 100%;
-    padding: 0.7rem 0;
-    border-radius: 9999px;
-    font-weight: 600;
-    border: none;
-    background: linear-gradient(90deg, darken($green, 10%), darken($blue, 10%));
-    color: #fff;
-    cursor: pointer;
-    transition: all 0.3s ease;
-
-    &:hover {
-
-      transform: scale(1.02);
-    }
-
-    &-popular {
-      width: 100%;
-      padding: 0.7rem 0;
-      border-radius: 9999px;
-      font-weight: 600;
-      border: none;
-      background: linear-gradient(90deg, $green, $blue);
-      color: #000;
-      cursor: pointer;
-      transition: all 0.3s ease;
+      flex-direction: row;
     }
   }
 }

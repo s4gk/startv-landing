@@ -1,0 +1,67 @@
+@import "@/styles/variables";
+
+.faq {
+  text-align: center;
+  width: 100%;
+
+  @media (min-width: $md) {
+      width: 80%;
+   }
+
+   @media (min-width: $lg) {
+      width: 60%;
+    }
+
+  &__list {
+    text-align: left;
+    border-top: 1px solid #ddd;
+  }
+
+  &__item {
+    border-bottom: 1px solid #ddd;
+    width: 100%;
+    overflow: hidden;
+    will-change: transform, height, opacity;
+  }
+
+  &__question {
+    width: 100%;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: left;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    align-items: center;
+    cursor: pointer;
+    transition: color 0.2s, background 0.3s ease;
+
+    &:hover {
+      color: $green;
+    }
+
+    &--active {
+      color: $green;
+    }
+  }
+
+  &__icon {
+    transition: transform 0.3s;
+    flex-shrink: 0;
+  }
+
+  &__answer {
+    overflow: hidden;
+    width: 100%;
+
+    p {
+      padding: 1.5rem 0;
+      color: #333;
+      line-height: 1.6;
+      text-align: left;
+    }
+  }
+}

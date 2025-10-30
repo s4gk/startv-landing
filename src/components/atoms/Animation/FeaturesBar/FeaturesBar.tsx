@@ -14,9 +14,9 @@ export const FeaturesBar = () => {
       transition={{ duration: 0.8, ease: "easeOut" }}
       className={styles.features}
     >
-      <div className={styles.features__wrapper}>
+      <div className={styles["features__wrapper"]}>
         <motion.div
-          className={styles.features__scroller}
+          className={styles["features__scroller"]}
           animate={{ x: ["0%", "-50%"] }}
           transition={{
             ease: "linear",
@@ -27,13 +27,13 @@ export const FeaturesBar = () => {
           {/* Contenido 2 (duplicado) */}
           {features.map((item, index) => (
             <React.Fragment key={`${index}-1`}>
-              <span className={styles.features__item}>{item.label}</span>
+              <span className={styles["features__item"]}>{item.label}</span>
               <IconCircle />
             </React.Fragment>
           ))}
           {features.map((item, index) => (
             <React.Fragment key={`${index}-2`}>
-              <span className={styles.features__item}>{item.label}</span>
+              <span className={styles["features__item"]}>{item.label}</span>
               <IconCircle />
             </React.Fragment>
           ))}

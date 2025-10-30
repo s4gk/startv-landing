@@ -1,13 +1,38 @@
+"use client";
+
+import React from "react";
 import Link from "next/link";
-import * as React from "react";
+import styles from "./ButtonNav.module.scss";
 
-export interface INavButtonProps {
+interface ButtonNavProps {
   id: number;
-  label: string;
   link: string;
-  onClick?: () => void;
+  label: string;
+  onClick?: (e: React.MouseEvent<HTMLAnchorElement>, href: string) => void;
+  isActive?: boolean;
 }
 
-export function ButtonNav({ id, label, link, onClick }: INavButtonProps) {
-  return <li key={id}><Link href={link} onClick={onClick}>{label}</Link></li>;
-}
+export const ButtonNav = ({
+  id,
+  link,
+  label,
+  onClick,
+  isActive,
+}: ButtonNavProps) => {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (onClick) onClick(e, link);
+  };
+
+  return (
+    <Link
+      key={id}
+      href={link}
+      onClick={handleClick}
+      className={`${styles["buttonnav"]} ${
+        isActive ? styles["buttonnav--active"] : ""
+      }`}
+    >
+      {label}
+    </Link>
+  );
+};

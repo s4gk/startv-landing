@@ -1,0 +1,48 @@
+@import "@/styles/variables";
+
+.testimonials {
+  padding: 4rem 0;
+  overflow: hidden;
+  margin: 0 $section-margin-x;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+  ::-webkit-scrollbar {
+    width: 0;
+    display: none;
+  }
+
+  @media (min-width: $md) {
+    margin: 0 $section-margin-md;
+  }
+
+  @media (min-width: $lg) {
+    margin: 0 $section-margin-lg;
+  }
+
+  &__title {
+    @include font-size("xl");
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  &__subtitle {
+    @include font-size("sm");
+    width: 100%;
+    opacity: 0.9;
+
+    @media (min-width: $md) {
+      width: 70%;
+      @include font-size("md");
+    }
+
+    @media (min-width: $lg) {
+      width: 52%;
+      @include font-size("md");
+    }
+  }
+}
