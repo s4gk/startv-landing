@@ -2,52 +2,93 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import React, { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { IconMenu, IconClose, SocialIcons, NavLinks } from "@/components";
 import styles from "./Navbar.module.scss";
 import Image from "next/image";
+import Link from "next/link";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string>("home");
+  const pathname = usePathname();
 
   useEffect(() => {
     const sections = document.querySelectorAll("section[id]");
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
+          if (entry.isIntersecting) setActiveSection(entry.target.id);
         });
       },
-      {
-        threshold: 0.4,
-      }
+      { threshold: 0.4 }
     );
 
     sections.forEach((section) => observer.observe(section));
-
     return () => {
       sections.forEach((section) => observer.unobserve(section));
     };
   }, []);
 
   const handleScrollTo = (
-    e: React.MouseEvent<HTMLAnchorElement>,
+    e: React.MouseEvent<HTMLAnchorElement | HTMLDivElement>,
     href: string
   ) => {
     e.preventDefault();
     const target = document.querySelector(href);
     if (target) target.scrollIntoView({ behavior: "smooth" });
-    setIsOpen(!isOpen);
+    setIsOpen(false);
+  };
+
+  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (pathname === "/") {
+      // 👇 Si estamos en home, hace scroll suave
+      e.preventDefault();
+      const homeSection = document.querySelector("#home");
+      if (homeSection) homeSection.scrollIntoView({ behavior: "smooth" });
+    }
+    setIsOpen(false);
   };
 
   return (
     <nav className={styles["navbar"]}>
       <div className={styles["navbar__start"]}>
-        <div className={styles["navbar__logo"]}>
-          <Image src="/images/logo.png" alt="Logo Star TV" width={50} height={50}/>
-        </div>
+        {/* 🔥 Logo animado con navegación + scroll si ya está en home */}
+        <Link
+          href="#home"
+          onClick={handleLogoClick}
+        >
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            whileHover={{ scale: 1.05 }}
+            className={styles["navbar__logo"]}
+          >
+            <motion.div
+              initial={{ opacity: 0, x: -10 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <Image
+                src="/images/logo.webp"
+                alt="Logo Star TV"
+                width={70}
+                height={70}
+              />
+            </motion.div>
+
+            <motion.span
+              initial={{ opacity: 0, x: -15 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+            >
+              Star TV
+            </motion.span>
+          </motion.div>
+        </Link>
+
+        {/* 🔘 Botón menú */}
         <button
           onClick={() => setIsOpen(!isOpen)}
           className={styles["navbar__toggle"]}
@@ -86,7 +127,8 @@ export const Navbar = () => {
         />
         <SocialIcons />
       </div>
-       {/* 🔥 Menú móvil (solo visible cuando isOpen es true) */}
+
+      {/* 🔥 Menú móvil */}
       <AnimatePresence>
         {isOpen && (
           <>
@@ -95,6 +137,7 @@ export const Navbar = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 0.5 }}
               exit={{ opacity: 0 }}
+              transition={{ duration: 0.25 }}
               onClick={() => setIsOpen(false)}
             />
             <motion.aside
@@ -102,7 +145,7 @@ export const Navbar = () => {
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
-              transition={{ type: "tween", duration: 0.3 }}
+              transition={{ type: "spring", stiffness: 150, damping: 20 }}
             >
               <NavLinks
                 activeSection={activeSection}

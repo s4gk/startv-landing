@@ -19,8 +19,8 @@ export default function LandingPage() {
       <HeroSection
         title={
           <>
-            Velocidad en <span className="text-green">Internet</span> y TV con
-            el <span className="text-green">mejor</span> contenido
+            Velocidad en <span className={styles["landing__text-green"]}>Internet</span> y TV con
+            el <span className={styles["landing__text-green"]}>mejor</span> contenido
           </>
         }
         subtitle="Navega a máxima velocidad y accede a la mejor programación de TV en HD. Conéctate, trabaja, aprende y diviértete sin interrupciones."

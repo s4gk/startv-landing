@@ -12,4 +12,8 @@
     @media (min-width: $lg) {
         gap: 10rem;
     }
+
+    &__text-green {
+        color: $green;
+    }
 }

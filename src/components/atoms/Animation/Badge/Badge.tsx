@@ -12,10 +12,11 @@ interface BadgeProps {
 export const Badge = ({ label, icon }: BadgeProps) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: -8 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3, ease: "easeOut" }}
       className={styles["badge"]}
+      initial={{ opacity: 0, y: -8 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: false, amount: 0.3 }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
     >
       {icon}
       <span className={styles["badge__text"]}>

@@ -11,21 +11,17 @@ interface AboutProps {
 }
 
 export const CardAbout = ({ data }: AboutProps) => {
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 40 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-  };
-
   const { id, img, title, text } = data;
 
   return (
     <motion.div
       key={id}
       className={styles["card"]}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      variants={fadeInUp}
+      initial={{ opacity: 0, y: 50, scale: 0.95 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.3 }}
+      whileHover={{ scale: 1.03, y: -5 }}
     >
       <Image
         src={img}
@@ -35,18 +31,45 @@ export const CardAbout = ({ data }: AboutProps) => {
         height={200}
         unoptimized
       />
+
       <div className={styles["card__content"]}>
-        <h3 className={styles["card__content-title"]}>
+        <motion.h3
+          className={styles["card__content-title"]}
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+        >
           {id}. {title}
-        </h3>
+        </motion.h3>
+
         {Array.isArray(text) ? (
-          <ul className={styles["card__content-list"]}>
+          <motion.ul
+            className={styles["card__content-list"]}
+            initial="hidden"
+            whileInView="show"
+            variants={{
+              hidden: {},
+              show: { transition: { staggerChildren: 0.1 } },
+            }}
+          >
             {text.map((t, index) => (
-              <li key={index}>{t}</li>
+              <motion.li
+                key={index}
+                variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0 } }}
+              >
+                {t}
+              </motion.li>
             ))}
-          </ul>
+          </motion.ul>
         ) : (
-          <p className={styles["card__content-text"]}>{text}</p>
+          <motion.p
+            className={styles["card__content-text"]}
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+          >
+            {text}
+          </motion.p>
         )}
       </div>
     </motion.div>

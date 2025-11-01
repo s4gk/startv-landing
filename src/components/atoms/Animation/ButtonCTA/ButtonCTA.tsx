@@ -11,23 +11,33 @@ type ButtonCTAProps = {
   onClick?: () => void;
 };
 
-export const ButtonCTA = ({ label, delay, duration, onClick }: ButtonCTAProps) => {
+export const ButtonCTA = ({
+  label,
+  delay = 0,
+  duration = 0.6,
+  onClick,
+}: ButtonCTAProps) => {
   return (
     <motion.button
       type="button"
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      whileHover={{ y: -5, scale: 1.03, transition: { duration: 0.2, ease: "easeOut" }, }}
-      whileTap={{ scale: 0.97 }}
-      transition={{ delay, duration, ease: "easeOut" }}
+      initial={{ opacity: 0, y: 20, scale: 0.95 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      viewport={{ once: false, amount: 0.3 }}
+      transition={{
+        delay,
+        duration,
+        ease: [0.25, 1, 0.5, 1],
+      }}
+      whileHover={{
+        y: -3,
+        scale: 1.08,
+        transition: { type: "tween", duration: 0.5, ease: "easeOut" }, // 🔥 hover instantáneo
+      }}
+      whileTap={{ scale: 0.95, transition: { type: "tween", duration: 0.08 } }}
       className={styles["button"]}
       onClick={onClick}
     >
-
-      {/* Capa oscura encima del gradiente */}
       <span className={styles["button__shadow"]} />
-
-      {/* Texto visible */}
       <span className={styles["button__text"]}>{label}</span>
     </motion.button>
   );

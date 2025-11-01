@@ -17,7 +17,7 @@ interface HeroProps {
 
 export function HeroSection({ title, subtitle, ctaText }: HeroProps) {
   return (
-    <section className={styles["hero"]} id="inicio">
+    <section className={styles["hero"]} id="home">
       <div className={styles["hero__background"]}>
         <Image
           src="/images/Home.webp"

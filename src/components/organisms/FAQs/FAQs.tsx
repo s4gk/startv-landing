@@ -23,9 +23,10 @@ export const Faqs = () => {
             key={index}
             layout
             className={styles["faq__item"]}
-            transition={{
-              layout: { duration: 0.4, ease: [0.25, 0.1, 0.25, 1] },
-            }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            viewport={{ once: false, amount: 0.3 }}
           >
             <button
               className={`${styles["faq__question"]} ${
@@ -37,7 +38,7 @@ export const Faqs = () => {
               <motion.span
                 className={styles["faq__icon"]}
                 animate={{ rotate: isOpen ? 180 : 0 }}
-                transition={{ duration: 0.25 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
                 <IconArrow />
               </motion.span>
@@ -53,7 +54,7 @@ export const Faqs = () => {
                   exit={{ height: 0, opacity: 0 }}
                   transition={{
                     height: { duration: 0.35, ease: [0.25, 0.1, 0.25, 1] },
-                    opacity: { duration: 0.25 },
+                    opacity: { duration: 0.3 },
                   }}
                 >
                   <motion.p
@@ -69,7 +70,6 @@ export const Faqs = () => {
               )}
             </AnimatePresence>
           </motion.div>
-          
         );
       })}
     </div>

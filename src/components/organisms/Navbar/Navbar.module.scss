@@ -7,12 +7,14 @@
   z-index: 50;
   width: 100%;
   height: $nav-height;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgb(0, 0, 0);
   padding: 1rem $section-margin-x;
   display: flex;
   gap: 0.5rem;
   align-items: center;
   background-color: $white;
+  overflow-x: hidden;
+  overflow-y: hidden;
 
   @media (min-width: $md) {
     border-bottom: none;
@@ -38,6 +40,21 @@
   &__logo {
     font-weight: 700;
     font-size: 1.25rem;
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    cursor: pointer;
+
+    img {
+      width: 3rem;
+      height: auto;
+      display: block;
+    }
+
+    span {
+      color: $foreground;
+    }
   }
 
   &__toggle {
@@ -92,6 +109,7 @@
     position: fixed;
     inset: 0;
     z-index: 60;
+    overflow: hidden;
 
     @media (min-width: $lg) {
       display: none;
@@ -100,20 +118,23 @@
 
   &__aside {
     position: fixed;
-    top: $nav-height;
     right: 0;
-    height: calc(100vh - #{$nav-height});
-    width: 50%;
+    height: calc(100vh - (#{$nav-height}));
+    top: $nav-height;
+    width: 70%;
+    max-width: 320px;
     background-color: #fff;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+    box-shadow: -2px 0 20px rgba(0, 0, 0, 0.15);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 2.5rem;
     z-index: 70;
+    overflow-x: hidden;
+    overflow-y: auto;
 
     @media (min-width: 640px) {
-      width: 40%;
+      width: 60%;
     }
 
     @media (min-width: $lg) {

@@ -19,6 +19,7 @@
     inset: 0;
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 0.75rem;
+    pointer-events: none;
   }
 
   &__text {

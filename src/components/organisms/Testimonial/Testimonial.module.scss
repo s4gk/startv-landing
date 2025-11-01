@@ -1,9 +1,9 @@
 @import "@/styles/variables";
 
 .testimonials__carousel {
-  width: 90%;
+  width: 100%;
   overflow-x: auto;
-  margin: 0 auto;
+  overflow-y: hidden;
   display: flex;
   gap: 1rem;
 

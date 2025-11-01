@@ -10,15 +10,16 @@ interface AnimatedParagraphProps {
   className: string;
 }
 
-export const AnimatedParagraph = ({label, delay, duration, className}: AnimatedParagraphProps) => {
+export const AnimatedParagraph = ({ label, delay = 0, duration = 0.6, className }: AnimatedParagraphProps) => {
   return (
     <motion.p
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay, duration, ease: 'easeOut' }}
       className={className}
+      initial={{ opacity: 0, y: 10 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: false, amount: 0.3 }}
+      transition={{ delay, duration, ease: 'easeOut' }}
     >
       {label}
     </motion.p>
-  )
+  );
 }
