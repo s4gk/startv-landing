@@ -8,13 +8,31 @@ import {
   Testimonials,
   TimeLine,
 } from "@/components";
-import { PricingData, AboutData, TestimonialData, Steps } from "@/lib";
+import { PricingData, AboutData, TestimonialData, Steps, faqs } from "@/lib";
 import { FeaturesData } from "@/lib/FeaturesData";
 import styles from './page.module.scss';
 
 export default function LandingPage() {
+  
+    const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map((item) => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer,
+      },
+    })),
+  };
+
   return (
     <main className={styles["landing"]}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       {/* 1. Banner Principal: El H1 es clave para el SEO */}
       <HeroSection
         title={

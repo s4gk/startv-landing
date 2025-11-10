@@ -14,7 +14,7 @@ export const Faqs = () => {
   };
 
   return (
-    <div className={styles["faq"]}>
+    <dl className={styles["faq"]}>
       {faqs.map((item, index) => {
         const isOpen = openIndex === index;
 
@@ -72,6 +72,6 @@ export const Faqs = () => {
           </motion.div>
         );
       })}
-    </div>
+    </dl>
   );
 };

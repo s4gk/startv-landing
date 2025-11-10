@@ -25,7 +25,7 @@ export function HeroSection({ title, subtitle, ctaText }: HeroProps) {
           fill
           style={{ objectFit: "cover" }}
           priority
-          quality={75}
+          quality={65}
           className={styles["hero__image"]}
         />
         <div className={styles["hero__content"]}>
