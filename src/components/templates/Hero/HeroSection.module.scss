@@ -65,7 +65,7 @@
     @include font-size("2xl");
     font-weight: 700;
     line-height: 1.2;
-    width: 80%;
+    width: 90%;
     color: white;
 
     @media (min-width: $md) {
@@ -82,7 +82,7 @@
 
   &__subtitle {
     @include font-size("sm");
-    width: 90%;
+    width: 80%;
     opacity: 0.9;
     color: white;
 

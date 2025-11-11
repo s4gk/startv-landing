@@ -13,15 +13,18 @@
   align-items: center;
   gap: 0.75rem;
   width: 46%;
+  max-width: 142px;
 
   @media (min-width: $md) {
     @include font-size("sm");
+    max-width: 240px;
     width: 38%;
     padding: 0.3rem;
   }
 
   @media (min-width: $lg) {
     gap: 0rem;
+    max-width: 320px;
     width: 20%;
     padding: 0.3rem;
   }

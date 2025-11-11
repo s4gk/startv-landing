@@ -4,7 +4,7 @@ import { IFeaturesData } from "../types";
 export const FeaturesData: IFeaturesData[] = [
   {
     icon: <IconSupport />,
-    title: "Soporte 24/7",
+    title: "Servicio constante",
     description:
       "Asistencia técnica disponible las 24 horas, todos los días del año.",
   },
