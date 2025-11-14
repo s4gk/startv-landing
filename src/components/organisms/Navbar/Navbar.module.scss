@@ -33,7 +33,8 @@
     width: 100%;
 
     @media (min-width: $lg) {
-      width: 28.5%;
+      width: 20%;
+      max-width: 25rem;
     }
   }
 
@@ -101,7 +102,8 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      width: 71.5%;
+      width: 80%;
+      max-width: 62.56rem;
     }
   }
 

@@ -23,9 +23,10 @@
   }
 
   @media (min-width: $lg) {
+    @include font-size("sm");
     gap: 0rem;
-    max-width: 320px;
-    width: 20%;
+    max-width: 260px;
+    width: 25%;
     padding: 0.3rem;
   }
 

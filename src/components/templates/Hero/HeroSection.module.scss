@@ -70,12 +70,12 @@
 
     @media (min-width: $md) {
       @include font-size("2xl");
-      width: 80%;
+      width: 90%;
     }
 
     @media (min-width: $lg) {
-      @include font-size("3xl");
-      min-width: 980px;
+      @include font-size("2xl");
+      min-width: 780px;
       width: 60%;
     }
   }
@@ -88,11 +88,11 @@
 
     @media (min-width: $md) {
       @include font-size("md");
-      width: 80%;
+      width: 90%;
     }
 
     @media (min-width: $lg) {
-      width: 50%;
+      width: 60%;
       @include font-size("md");
     }
   }
