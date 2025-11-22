@@ -52,12 +52,12 @@ export const CardAbout = ({ data }: AboutProps) => {
               show: { transition: { staggerChildren: 0.1 } },
             }}
           >
-            {text.map((t, index) => (
+            {text.map((text, index) => (
               <motion.li
                 key={index}
                 variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0 } }}
               >
-                {t}
+                {text}
               </motion.li>
             ))}
           </motion.ul>

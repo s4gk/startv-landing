@@ -74,7 +74,7 @@
       }
 
       @media (min-width: $lg) {
-        @include font-size("2xl");
+        @include font-size("lg");
       }
     }
 
@@ -118,10 +118,6 @@
 
       @media (min-width: $md) {
         @include font-size("xs");
-      }
-
-      @media (min-width: $lg) {
-        @include font-size("md");
       }
     }
 

@@ -22,13 +22,11 @@
     display: grid;
     grid-template-columns: 1fr;
     align-items: center;
-    margin-bottom: 4rem;
     border-radius: 1rem;
 
     @media (min-width: $lg) {
       grid-template-columns: 1fr 1fr;
       align-items: center;
-      margin-bottom: 4rem;
     }
   }
 

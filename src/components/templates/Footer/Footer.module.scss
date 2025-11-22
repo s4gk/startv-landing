@@ -1,14 +1,22 @@
 @import "@/styles/variables";
 
 .footer {
-  background-color: #0d0d0d; // un negro más profundo
+  background-color: #0d0d0d;
   color: #e0e0e0;
   font-family: "Inter", sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 3rem 1rem;
+  padding: 1rem $section-margin-x;
+
+  @media (min-width: $md) {
+    padding: 1.5rem $section-margin-md;
+  }
+
+  @media (min-width: $lg) {
+    padding: 1.5rem $section-margin-lg;
+  }
 
   &__container {
     display: flex;
