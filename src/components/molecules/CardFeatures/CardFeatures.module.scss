@@ -42,13 +42,12 @@
       background-color: rgba(255, 255, 255, 0.3);
       backdrop-filter: blur(4px);
       border: 1px solid rgba(0, 0, 0, 0.4);
-      width: 5rem;  
+      width: 5rem;
     }
 
     &-title {
       @include font-size("xl");
       font-weight: 600;
-      color: #000;
       margin-bottom: 0.5rem;
 
       @media (min-width: $lg) {
@@ -58,7 +57,6 @@
 
     &-subtitle {
       @include font-size("sm");
-      color: rgba(0, 0, 0, 0.8);
 
       @media (min-width: $lg) {
         @include font-size("lg");

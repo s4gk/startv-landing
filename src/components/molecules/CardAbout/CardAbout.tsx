@@ -55,7 +55,10 @@ export const CardAbout = ({ data }: AboutProps) => {
             {text.map((text, index) => (
               <motion.li
                 key={index}
-                variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0 } }}
+                variants={{
+                  hidden: { opacity: 0, y: 10 },
+                  show: { opacity: 1, y: 0 },
+                }}
               >
                 {text}
               </motion.li>

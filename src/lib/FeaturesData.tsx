@@ -10,7 +10,7 @@ export const FeaturesData: IFeaturesData[] = [
   },
   {
     icon: <IconFlashlight />,
-    title: "Ultra Velocidad",
+    title: "Máximo Desempeño",
     description: "Conéctate sin interrupciones y navega a máxima velocidad.",
   },
   {

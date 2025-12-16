@@ -10,11 +10,11 @@
   border-bottom: 1px solid rgb(0, 0, 0);
   padding: 1rem $section-margin-x;
   display: flex;
+  justify-content: space-between;
   gap: 0.5rem;
   align-items: center;
   background-color: $white;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  overflow: hidden;
 
   @media (min-width: $md) {
     border-bottom: none;
@@ -24,18 +24,6 @@
   @media (min-width: $lg) {
     border-bottom: none;
     padding: 1.5rem $section-margin-lg;
-  }
-
-  &__start {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-
-    @media (min-width: $lg) {
-      width: 20%;
-      max-width: 25rem;
-    }
   }
 
   &__logo {
@@ -55,6 +43,29 @@
 
     span {
       color: $foreground;
+    }
+  }
+
+  &__menu {
+    display: none;
+
+    @media (min-width: $lg) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 60%;
+      max-width: 62.56rem;
+    }
+  }
+
+  &__icons {
+    display: none;
+
+    @media (min-width: $lg) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 62.56rem;
     }
   }
 
@@ -92,18 +103,6 @@
           }
         }
       }
-    }
-  }
-
-  &__end {
-    display: none;
-
-    @media (min-width: $lg) {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 80%;
-      max-width: 62.56rem;
     }
   }
 

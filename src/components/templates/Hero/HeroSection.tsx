@@ -27,12 +27,10 @@ export function HeroSection({ title, subtitle, ctaText }: HeroProps) {
           priority
           quality={65}
           className={styles["hero__image"]}
+          unoptimized
         />
         <div className={styles["hero__content"]}>
-          <Badge
-            icon={<IconWorld />}
-            label="Conectando el mundo"
-          />
+          <Badge icon={<IconWorld />} label="Conectando el mundo" />
 
           <h1 className={styles["hero__title"]}>{title}</h1>
 

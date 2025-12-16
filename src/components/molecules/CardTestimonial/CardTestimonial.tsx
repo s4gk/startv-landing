@@ -6,8 +6,13 @@ import styles from "./CardTestimonial.module.scss";
 import { ITestimonialData } from "../../../types";
 import { IconQuote } from "@/components/atoms/icons/IconQuote";
 
-
-export const CardTestimonial = ({image, name, occupation, comment, rating}: ITestimonialData) => {
+export const CardTestimonial = ({
+  image,
+  name,
+  occupation,
+  comment,
+  rating,
+}: ITestimonialData) => {
   const fadeIn = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
@@ -32,6 +37,7 @@ export const CardTestimonial = ({image, name, occupation, comment, rating}: ITes
           width={48}
           height={48}
           className={styles["card__user-avatar"]}
+          unoptimized
         />
         <div>
           <h4 className={styles["card__user-name"]}>{name}</h4>

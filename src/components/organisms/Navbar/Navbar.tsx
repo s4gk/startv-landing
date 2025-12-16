@@ -21,7 +21,7 @@ export const Navbar = () => {
           if (entry.isIntersecting) setActiveSection(entry.target.id);
         });
       },
-      { threshold: 0.4 }
+      { rootMargin: "-30% 0% -70% 0%" }
     );
 
     sections.forEach((section) => observer.observe(section));
@@ -52,81 +52,72 @@ export const Navbar = () => {
 
   return (
     <nav className={styles["navbar"]}>
-      <div className={styles["navbar__start"]}>
-        {/* 🔥 Logo animado con navegación + scroll si ya está en home */}
-        <Link
-          href="#home"
-          onClick={handleLogoClick}
+      {/* 🔥 Logo animado con navegación + scroll si ya está en home */}
+      <Link href="#home" onClick={handleLogoClick}>
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          whileHover={{ scale: 1.05 }}
+          className={styles["navbar__logo"]}
         >
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
+          <Image
+            src="/images/logo.webp"
+            alt="Logo Star TV"
+            width={70}
+            height={70}
+            unoptimized
+          />
+          <motion.span
+            initial={{ opacity: 0, x: -15 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            whileHover={{ scale: 1.05 }}
-            className={styles["navbar__logo"]}
+            transition={{ delay: 0.2, duration: 0.6 }}
           >
-            <motion.div
-              initial={{ opacity: 0, x: -10 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <Image
-                src="/images/logo.webp"
-                alt="Logo Star TV"
-                width={70}
-                height={70}
-              />
-            </motion.div>
+            Star TV
+          </motion.span>
+        </motion.div>
+      </Link>
 
-            <motion.span
-              initial={{ opacity: 0, x: -15 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.2, duration: 0.6 }}
-            >
-              Star TV
-            </motion.span>
-          </motion.div>
-        </Link>
-
-        {/* 🔘 Botón menú */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className={styles["navbar__toggle"]}
-        >
-          <AnimatePresence mode="wait" initial={false}>
-            {isOpen ? (
-              <motion.div
-                key="close"
-                className={styles["navbar__toggle-icon"]}
-                initial={{ opacity: 0, rotate: -90 }}
-                animate={{ opacity: 1, rotate: 0 }}
-                exit={{ opacity: 0, rotate: 90 }}
-              >
-                <IconClose />
-              </motion.div>
-            ) : (
-              <motion.div
-                key="menu"
-                className={styles["navbar__toggle-icon"]}
-                initial={{ opacity: 0, rotate: 90 }}
-                animate={{ opacity: 1, rotate: 0 }}
-                exit={{ opacity: 0, rotate: -90 }}
-              >
-                <IconMenu />
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </button>
-      </div>
-
-      <div className={styles["navbar__end"]}>
+      <div className={styles["navbar__menu"]}>
         <NavLinks
           activeSection={activeSection}
           onLinkClick={handleScrollTo}
           setIsOpen={setIsOpen}
         />
+      </div>
+
+      <div className={styles["navbar__icons"]}>
         <SocialIcons />
       </div>
+
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className={styles["navbar__toggle"]}
+      >
+        <AnimatePresence mode="wait" initial={false}>
+          {isOpen ? (
+            <motion.div
+              key="close"
+              className={styles["navbar__toggle-icon"]}
+              initial={{ opacity: 0, rotate: -90 }}
+              animate={{ opacity: 1, rotate: 0 }}
+              exit={{ opacity: 0, rotate: 90 }}
+            >
+              <IconClose />
+            </motion.div>
+          ) : (
+            <motion.div
+              key="menu"
+              className={styles["navbar__toggle-icon"]}
+              initial={{ opacity: 0, rotate: 90 }}
+              animate={{ opacity: 1, rotate: 0 }}
+              exit={{ opacity: 0, rotate: -90 }}
+            >
+              <IconMenu />
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </button>
 
       {/* 🔥 Menú móvil */}
       <AnimatePresence>
